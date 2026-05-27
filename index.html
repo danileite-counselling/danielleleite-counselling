@@ -180,13 +180,14 @@ nav {
   color: white;
 }
 .btn-outline {
-  background: rgba(255, 255, 255, 0.85);
-  color: var(--sage-dark);
+  background: var(--sage);
+  color: white;
   border: 2px solid var(--sage);
   margin-left: 1rem;
 }
 .btn-outline:hover {
-  background: var(--sage);
+  background: var(--sage-dark);
+  border-color: var(--sage-dark);
   color: white;
 }
 
@@ -779,13 +780,16 @@ footer a {
   /* HIDE SELECTED CARDS ON MOBILE */
   .mobile-hide { display: none; }
 
-  /* ABOUT COUNSELLING CARDS: compact on mobile */
+  /* ABOUT COUNSELLING CARDS: compact + centred on mobile */
   .card-grid-3 .info-card {
     padding: 0.6rem 0.8rem;
     border-radius: 10px;
+    justify-content: center;
+    text-align: center;
   }
   .card-grid-3 .info-card h3 {
     font-size: 0.85rem;
+    flex: none;
   }
   .card-grid-3 .info-card .icon {
     width: 18px;
@@ -1132,7 +1136,7 @@ footer a {
 <section class="contact" id="contact">
   <div class="contact-container">
     <h2>Get in Touch</h2>
-    <p>Ready to take the first step? Reach out for a free 15-minute consultation. I'd love to hear from you, wherever in the world you are.</p>
+    <p>Ready to take the first step? Reach out for a free 15-minute consultation. I'd love to hear from you, wherever you are in the world.</p>
     <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
       <input type="hidden" name="form-name" value="contact">
       <div class="form-row">
