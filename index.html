@@ -780,26 +780,8 @@ footer a {
   /* HIDE SELECTED CARDS ON MOBILE */
   .mobile-hide { display: none; }
 
-  /* ABOUT COUNSELLING CARDS: compact + centred on mobile */
-  .card-grid-3 .info-card {
-    padding: 0.6rem 0.8rem;
-    border-radius: 10px;
-    justify-content: center;
-    text-align: center;
-  }
-  .card-grid-3 .info-card h3 {
-    font-size: 0.85rem;
-    flex: none;
-  }
-  .card-grid-3 .info-card .icon {
-    width: 18px;
-    height: 18px;
-  }
-
-  /* WHAT I CAN HELP WITH: compact list style */
-  .card-grid { grid-template-columns: 1fr; }
-  .card-grid:not(.card-grid-3) .info-card:last-child { grid-column: auto; }
-  .card-grid:not(.card-grid-3) .info-card {
+  /* ALL CARDS: same style on mobile */
+  .info-card {
     background: var(--warm-white);
     border: 1px solid rgba(168,181,160,0.12);
     border-radius: 10px;
@@ -808,22 +790,23 @@ footer a {
     cursor: pointer;
     flex-wrap: wrap;
   }
-  .card-grid:not(.card-grid-3) .info-card:hover {
+  .info-card:hover {
     box-shadow: none;
-    border-color: rgba(168,181,160,0.15);
   }
-  .card-grid:not(.card-grid-3) .info-card h3 {
+  .info-card h3 {
     font-size: 0.95rem;
   }
-  .card-grid:not(.card-grid-3) .info-card .icon {
-    width: 18px;
-    height: 18px;
-  }
+
+  /* CARDS GRID: single column on mobile */
+  .card-grid { grid-template-columns: 1fr; }
+  .card-grid:not(.card-grid-3) .info-card:last-child { grid-column: auto; }
 
   /* POPUPS: inline expand on mobile */
   .info-popup {
-    position: relative;
-    top: auto; left: auto; right: auto;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
     width: 100%;
     margin-top: 0;
     padding: 0;
@@ -838,11 +821,11 @@ footer a {
     pointer-events: auto;
   }
   .info-popup::before { display: none; }
-  .info-card:hover .info-popup { opacity: 0; max-height: 0; transform: none; }
+  .info-card:hover .info-popup { opacity: 0; max-height: 0; padding: 0; transform: none; }
   .info-card.active .info-popup {
     opacity: 1;
     max-height: 300px;
-    padding: 0.8rem 0 0.4rem;
+    padding: 0.8rem 0.2rem 0.4rem;
     transform: none;
   }
 
