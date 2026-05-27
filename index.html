@@ -84,6 +84,24 @@ nav {
 }
 .nav-links a:hover { color: var(--sage-dark); }
 
+/* HAMBURGER MENU */
+.hamburger {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 10001;
+}
+.hamburger svg {
+  width: 26px;
+  height: 26px;
+  stroke: var(--text-mid);
+  fill: none;
+  stroke-width: 2;
+  stroke-linecap: round;
+}
+
 /* HERO */
 .hero {
   min-height: 100vh;
@@ -681,18 +699,71 @@ footer a {
   .card-grid-3 .info-card:last-child { grid-column: auto; }
 }
 @media (max-width: 768px) {
+  /* HAMBURGER NAV */
+  .hamburger { display: block; }
   nav { padding: 0.8rem 1.2rem; }
-  .nav-links { gap: 1rem; }
-  .nav-links a { font-size: 0.8rem; }
+  .nav-links {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: var(--cream);
+    flex-direction: column;
+    align-items: center;
+    padding: 7rem 2rem 2rem;
+    gap: 1.5rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    z-index: 10000;
+  }
+  .nav-links.open {
+    display: flex;
+  }
+  .nav-links a { font-size: 1.05rem; }
+
+  /* PHOTOS: horizontal row on mobile */
   .about-container {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
   .about-image-wrapper {
-    max-width: 320px;
+    flex-direction: row;
+    gap: 0.5rem;
+    max-width: 100%;
     margin: 0 auto;
   }
+  .about-photo {
+    flex: 1;
+    max-height: 120px;
+  }
+  .about-photo img {
+    height: 120px;
+    object-fit: cover;
+  }
+
+  /* CARDS: single column, popup below */
   .card-grid { grid-template-columns: 1fr; }
+  .card-grid:not(.card-grid-3) .info-card:last-child { grid-column: auto; }
+  .info-card { position: relative; }
+  .info-popup {
+    position: relative;
+    top: auto; left: auto; right: auto;
+    margin-top: 0.8rem;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transform: none;
+    transition: opacity 0.25s ease, max-height 0.3s ease;
+    box-shadow: none;
+    border: 1px solid rgba(168,181,160,0.15);
+    pointer-events: auto;
+  }
+  .info-popup::before { display: none; }
+  .info-card:hover .info-popup,
+  .info-card.active .info-popup {
+    opacity: 1;
+    max-height: 300px;
+    transform: none;
+  }
+
   .form-row { grid-template-columns: 1fr; }
   .steps { gap: 1rem; }
   .step { min-width: 130px; }
@@ -732,12 +803,15 @@ footer a {
   <a href="#" class="nav-logo">
     <img src="nav-bar-logo.png" alt="Danielle Leite — Counselling & Support">
   </a>
+  <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open'); this.classList.toggle('open')">
+    <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+  </button>
   <ul class="nav-links">
-    <li><a href="#story">My Story</a></li>
-    <li><a href="#learn-more">Learn More</a></li>
-    <li><a href="#how-it-works">How It Works</a></li>
+    <li><a href="#story" onclick="document.querySelector('.nav-links').classList.remove('open')">My Story</a></li>
+    <li><a href="#learn-more" onclick="document.querySelector('.nav-links').classList.remove('open')">Learn More</a></li>
+    <li><a href="#how-it-works" onclick="document.querySelector('.nav-links').classList.remove('open')">How It Works</a></li>
     <li><a href="/blog/">Blog</a></li>
-    <li><a href="#contact">Contact</a></li>
+    <li><a href="#contact" onclick="document.querySelector('.nav-links').classList.remove('open')">Contact</a></li>
   </ul>
 </nav>
 
