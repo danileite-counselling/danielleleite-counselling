@@ -703,6 +703,25 @@ footer a {
   .hero .btn + .btn { margin-top: 0.8rem; }
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "Danielle Leite — Counselling & Support",
+  "description": "Online counselling for expats, global nomads, and anyone navigating life far from home. Sessions in English, Portuguese, French, and Italian.",
+  "url": "https://danielleleite.com",
+  "provider": {
+    "@type": "Person",
+    "name": "Danielle Leite",
+    "jobTitle": "Counsellor",
+    "description": "Expat counsellor with over 30 years of experience living abroad across four countries and four languages.",
+    "knowsLanguage": ["English", "Portuguese", "French", "Italian"]
+  },
+  "serviceType": "Online Counselling",
+  "areaServed": "Worldwide",
+  "availableLanguage": ["English", "Portuguese", "French", "Italian"]
+}
+</script>
 </head>
 <body>
 
@@ -967,7 +986,7 @@ footer a {
   <div class="contact-container">
     <h2>Get in Touch</h2>
     <p>Ready to take the first step? Reach out for a free 15-minute consultation. I'd love to hear from you, wherever in the world you are.</p>
-    <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+    <form class="contact-form" onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div class="form-group">
           <label for="name">Your Name</label>
