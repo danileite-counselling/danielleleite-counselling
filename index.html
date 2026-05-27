@@ -742,25 +742,34 @@ footer a {
   /* CARDS: single column, popup below */
   .card-grid { grid-template-columns: 1fr; }
   .card-grid:not(.card-grid-3) .info-card:last-child { grid-column: auto; }
-  .info-card { position: relative; }
+  .info-card {
+    position: relative;
+    flex-wrap: wrap;
+    cursor: pointer;
+  }
   .info-popup {
     position: relative;
     top: auto; left: auto; right: auto;
-    margin-top: 0.8rem;
+    width: 100%;
+    margin-top: 0.6rem;
+    padding: 0;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
     transform: none;
-    transition: opacity 0.25s ease, max-height 0.3s ease;
+    transition: opacity 0.25s ease, max-height 0.35s ease, padding 0.25s ease;
     box-shadow: none;
-    border: 1px solid rgba(168,181,160,0.15);
+    border: none;
+    border-top: 1px solid rgba(168,181,160,0.15);
+    border-radius: 0;
     pointer-events: auto;
   }
   .info-popup::before { display: none; }
-  .info-card:hover .info-popup,
+  .info-card:hover .info-popup { opacity: 0; max-height: 0; transform: none; }
   .info-card.active .info-popup {
     opacity: 1;
     max-height: 300px;
+    padding: 1rem 0.2rem 0.2rem;
     transform: none;
   }
 
