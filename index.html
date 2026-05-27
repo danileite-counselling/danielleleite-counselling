@@ -986,7 +986,7 @@ footer a {
   <div class="contact-container">
     <h2>Get in Touch</h2>
     <p>Ready to take the first step? Reach out for a free 15-minute consultation. I'd love to hear from you, wherever in the world you are.</p>
-    <form class="contact-form" onsubmit="handleSubmit(event)">
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
       <div class="form-row">
         <div class="form-group">
           <label for="name">Your Name</label>
@@ -1030,16 +1030,37 @@ footer a {
 <script>
 function handleSubmit(e) {
   e.preventDefault();
-  const btn = e.target.querySelector('.form-submit');
-  btn.textContent = 'Thank you! I\'ll be in touch soon.';
-  btn.style.background = '#7A8E6F';
+  const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  const formData = new FormData(form);
+  btn.textContent = 'Sending...';
   btn.disabled = true;
-  setTimeout(() => {
-    btn.textContent = 'Send Message';
-    btn.style.background = '';
+  fetch('/', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(response => {
+    if (response.ok) {
+      btn.textContent = 'Thank you! I\'ll be in touch soon.';
+      btn.style.background = '#7A8E6F';
+      form.reset();
+      setTimeout(() => {
+        btn.textContent = 'Send Message';
+        btn.style.background = '';
+        btn.disabled = false;
+      }, 4000);
+    } else {
+      btn.textContent = 'Something went wrong. Please try again.';
+      btn.style.background = '#c0392b';
+      btn.disabled = false;
+    }
+  })
+  .catch(() => {
+    btn.textContent = 'Something went wrong. Please try again.';
+    btn.style.background = '#c0392b';
     btn.disabled = false;
-    e.target.reset();
-  }, 3000);
+  });
 }
 </script>
 
