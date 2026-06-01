@@ -8,9 +8,21 @@
   </url>
   <url>
     <loc>https://danielleleite.com/blog/</loc>
-    <lastmod>2026-05-29</lastmod>
+    <lastmod>2026-06-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://danielleleite.com/blog/the-expat-son-of-the-expat-daughter/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://danielleleite.com/blog/it-can-hurt-to-be-an-expat/</loc>
+    <lastmod>2026-06-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://danielleleite.com/blog/the-unspoken-loss-of-self/</loc>
