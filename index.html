@@ -657,6 +657,7 @@ nav {
 
 /* CONTACT FORM */
 .contact-form { text-align: left; }
+.form-hp { position: absolute; left: -9999px; }
 .form-group { margin-bottom: 1.4rem; }
 .form-group label {
   display: block; font-size: 0.85rem; font-weight: 500;
@@ -1173,8 +1174,11 @@ footer a {
   <div class="contact-container">
     <h2>Get in Touch</h2>
     <p>Ready to take the first step? Reach out for a free 15-minute consultation. I'd love to hear from you, wherever you are in the world.</p>
-    <form class="contact-form" name="contact" method="POST" data-netlify="true" onsubmit="handleSubmit(event)">
+    <form class="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" onsubmit="handleSubmit(event)">
       <input type="hidden" name="form-name" value="contact">
+      <p class="form-hp">
+        <label>Don't fill this out if you're human: <input name="bot-field"></label>
+      </p>
       <div class="form-row">
         <div class="form-group">
           <label for="name">Your Name</label>
