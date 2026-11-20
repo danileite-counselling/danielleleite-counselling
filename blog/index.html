@@ -5,15 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- Google Analytics loads only with consent: see /consent.js -->
 <script src="/consent.js" defer></script>
-<title>Blog | The Expat Compass with Danielle Leite</title>
-<meta name="description" content="Insights, reflections, and practical advice on expat life, mental health abroad, and navigating life far from home. By Danielle Leite, expat counsellor.">
-<meta property="og:title" content="Blog | The Expat Compass with Danielle Leite">
-<meta property="og:description" content="Insights, reflections, and practical advice on expat life, mental health abroad, and navigating life far from home.">
-<meta property="og:type" content="website">
+<title>The Expat Christmas: When the Holidays Feel Far From Home | Danielle Leite</title>
+<meta name="description" content="Christmas abroad can magnify everything you miss. An expat counsellor on spending the holidays far from family, and gentle ways to cope when Christmas feels heavy.">
+<meta name="keywords" content="expat christmas, christmas abroad, christmas away from family, holidays abroad, loneliness at christmas, homesick at christmas, expat mental health, online counselling for expats">
+<meta property="og:title" content="The Expat Christmas: When the Holidays Feel Far From Home | Danielle Leite">
+<meta property="og:description" content="Christmas abroad can magnify everything you miss. An expat counsellor on spending the holidays far from family, and gentle ways to cope when Christmas feels heavy.">
+<meta property="og:type" content="article">
+<meta property="og:image" content="https://danielleleite.com/blog/the-expat-christmas/expat-christmas-york.jpg">
+<meta property="og:url" content="https://danielleleite.com/blog/the-expat-christmas/">
 <link rel="icon" href="/favicon.ico" sizes="32x32">
 <link rel="icon" href="/favicon-192.png" sizes="192x192" type="image/png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<link rel="canonical" href="https://danielleleite.com/blog/">
+<link rel="canonical" href="https://danielleleite.com/blog/the-expat-christmas/">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 <style>
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,215 +42,148 @@ body {
 
 /* NAV */
 nav {
-  position: fixed;
-  top: 0; left: 0;
-  width: 100%;
-  z-index: 9999;
-  background: rgba(250, 246, 241, 0.92);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(168, 181, 160, 0.15);
-  padding: 0.6rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.nav-logo {
-  text-decoration: none;
-  display: flex;
-  align-items: center;
-}
-.nav-logo img {
-  height: 130px;
-  width: auto;
-}
-.nav-links {
-  display: flex;
-  gap: 2rem;
-  list-style: none;
-}
-.nav-links a {
-  text-decoration: none;
-  color: var(--text-mid);
-  font-size: 0.9rem;
-  font-weight: 400;
-  transition: color 0.3s;
-  letter-spacing: 0.03em;
-}
-.nav-links a:hover { color: var(--sage-dark); }
-.nav-links a.active { color: var(--sage-dark); font-weight: 500; }
-
-/* BLOG HEADER */
-.blog-header {
-  padding: 12rem 2rem 4rem;
-  text-align: center;
-  background: var(--warm-white);
-  border-bottom: 1px solid rgba(168,181,160,0.1);
-}
-.blog-header h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: clamp(2rem, 4vw, 3rem);
-  font-weight: 700;
-  color: var(--text-dark);
-  margin-bottom: 0.8rem;
-}
-.blog-header p {
-  font-size: 1.1rem;
-  color: var(--text-mid);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* BLOG GRID */
-.blog-container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 4rem 2rem;
-}
-.blog-post-card {
-  background: var(--warm-white);
-  border-radius: 16px;
-  padding: 2.5rem;
-  margin-bottom: 2rem;
+  position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+  background: var(--warm-white); padding: 0.75rem 2rem;
+  display: flex; align-items: center; justify-content: space-between;
   box-shadow: var(--soft-shadow);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 1px solid rgba(168,181,160,0.08);
 }
-.blog-post-card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 30px rgba(61, 56, 50, 0.1);
+.nav-logo img { height: 45px; }
+.nav-links { list-style: none; display: flex; gap: 2rem; }
+.nav-links a {
+  text-decoration: none; color: var(--text-mid); font-size: 0.9rem;
+  font-weight: 400; letter-spacing: 0.01em; transition: color 0.2s;
 }
-.blog-post-card .featured-tag {
-  display: inline-block;
-  font-size: 0.7rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--blush-dark);
-  background: rgba(200,166,142,0.15);
-  padding: 0.25rem 0.7rem;
-  border-radius: 20px;
-  margin-right: 0.4rem;
+.nav-links a:hover, .nav-links a.active { color: var(--sage-dark); }
+.hamburger { display: none; background: none; border: none; cursor: pointer; }
+.hamburger svg { width: 28px; height: 28px; stroke: var(--text-dark); stroke-width: 2; stroke-linecap: round; }
+
+/* ARTICLE HEADER */
+.article-header {
+  padding: 8rem 2rem 2rem; max-width: 780px; margin: 0 auto;
 }
-.blog-post-card .post-tag {
-  display: inline-block;
-  font-size: 0.75rem;
-  font-weight: 500;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--sage-dark);
-  background: rgba(168,181,160,0.15);
-  padding: 0.3rem 0.8rem;
-  border-radius: 20px;
+.post-tag {
+  display: inline-block; background: var(--sage); color: white;
+  padding: 0.3rem 0.9rem; border-radius: 20px; font-size: 0.75rem;
+  font-weight: 500; letter-spacing: 0.03em; text-transform: uppercase;
   margin-bottom: 1rem;
 }
-.blog-post-card h2 {
-  font-family: 'Playfair Display', serif;
-  font-size: 1.6rem;
-  font-weight: 600;
-  margin-bottom: 0.8rem;
-  line-height: 1.3;
+.article-header h1 {
+  font-family: 'Playfair Display', serif; font-size: 2.8rem;
+  font-weight: 700; color: var(--text-dark); line-height: 1.2;
+  margin-bottom: 0.75rem;
 }
-.blog-post-card h2 a {
-  text-decoration: none;
-  color: var(--text-dark);
-  transition: color 0.3s;
+.post-meta { font-size: 0.85rem; color: var(--text-light); }
+
+/* HERO IMAGE */
+.article-hero-img {
+  max-width: 780px; margin: 0 auto; padding: 0 2rem;
 }
-.blog-post-card h2 a:hover {
-  color: var(--sage-dark);
+.article-hero-img img {
+  width: 100%; border-radius: 12px; box-shadow: var(--soft-shadow);
 }
-.blog-post-card .post-excerpt {
-  font-size: 1rem;
+
+/* ARTICLE BODY */
+.article-body {
+  max-width: 780px; margin: 0 auto; padding: 2.5rem 2rem 3rem;
+  font-size: 1.05rem;
+}
+.article-body p { margin-bottom: 1.5rem; color: var(--text-mid); }
+.article-body h2 {
+  font-family: 'Playfair Display', serif; font-size: 1.6rem;
+  color: var(--text-dark); margin: 2.5rem 0 1rem;
+}
+.article-body blockquote {
+  border-left: 3px solid var(--sage); margin: 2rem 0;
+  padding: 1.2rem 1.5rem; background: var(--warm-white);
+  border-radius: 0 8px 8px 0; font-style: italic;
   color: var(--text-mid);
-  line-height: 1.8;
-  margin-bottom: 1.5rem;
 }
-.blog-post-card .read-more {
-  display: inline-block;
-  font-size: 0.9rem;
-  font-weight: 500;
-  color: var(--sage-dark);
-  text-decoration: none;
-  letter-spacing: 0.03em;
-  transition: color 0.3s;
-}
-.blog-post-card .read-more:hover {
-  color: var(--text-dark);
-}
-.blog-post-card .read-more::after {
-  content: ' \2192';
+.article-body a { color: var(--sage-dark); text-decoration: underline; text-underline-offset: 2px; }
+.article-body a:hover { color: var(--text-dark); }
+
+/* INLINE IMAGES */
+.inline-img { margin: 2rem 0; }
+.inline-img img { width: 100%; border-radius: 10px; box-shadow: var(--soft-shadow); }
+.inline-img .caption {
+  font-size: 0.85rem; color: var(--text-light); text-align: center;
+  margin-top: 0.6rem; font-style: italic;
 }
 
-/* FOOTER */
+/* CTA */
+.article-cta {
+  max-width: 780px; margin: 0 auto 2rem; padding: 2.5rem;
+  background: var(--warm-white); border-radius: 12px;
+  text-align: center; box-shadow: var(--soft-shadow);
+}
+.article-cta p { color: var(--text-mid); font-size: 1.05rem; margin-bottom: 1.2rem; }
+.btn {
+  display: inline-block; background: var(--sage-dark); color: white;
+  padding: 0.9rem 2rem; border-radius: 30px; text-decoration: none;
+  font-weight: 500; font-size: 0.95rem; transition: background 0.2s;
+}
+.btn:hover { background: var(--text-dark); }
+
+.back-to-blog {
+  text-align: center; padding: 1.5rem 0 3rem;
+}
+.back-to-blog a { color: var(--sage-dark); text-decoration: none; font-size: 0.9rem; }
+.back-to-blog a:hover { text-decoration: underline; }
+
 footer {
-  text-align: center;
-  padding: 2rem;
-  color: var(--text-light);
-  font-size: 0.85rem;
-  border-top: 1px solid rgba(168,181,160,0.1);
-}
-
-/* HAMBURGER */
-.hamburger {
-  display: none;
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 0.5rem;
-  z-index: 10001;
-}
-.hamburger svg {
-  width: 26px; height: 26px;
-  stroke: var(--text-mid);
-  fill: none;
-  stroke-width: 2;
-  stroke-linecap: round;
+  text-align: center; padding: 2rem; font-size: 0.8rem; color: var(--text-light);
+  border-top: 1px solid var(--blush);
 }
 
 /* MOBILE */
 @media (max-width: 768px) {
-  .hamburger { display: block; }
-  nav { padding: 0.8rem 1.2rem; }
-  .nav-logo img { height: 80px; }
-  .nav-links {
-    display: none;
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    background: var(--cream);
-    flex-direction: column;
-    align-items: center;
-    padding: 6rem 2rem 2rem;
-    gap: 1.5rem;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-    z-index: 10000;
-  }
+  .nav-links { display: none; flex-direction: column; position: fixed; top: 0; right: 0; width: 260px; height: 100vh; background: var(--warm-white); padding: 5rem 2rem 2rem; gap: 1.5rem; box-shadow: 0 4px 20px rgba(0,0,0,0.1); z-index: 10000; }
   .nav-links.open { display: flex; }
   .nav-links a { font-size: 1.05rem; }
-  .blog-header { padding: 7rem 1.5rem 2.5rem; }
-  .blog-container { padding: 2rem 1.5rem; }
-  .blog-post-card { padding: 1.5rem; }
-  .blog-post-card h2 { font-size: 1.3rem; }
+  .hamburger { display: block; }
+  .article-header { padding: 7rem 1.5rem 2rem; }
+  .article-header h1 { font-size: 2rem; }
+  .article-hero-img { padding: 0 1.5rem; }
+  .article-body { padding: 2rem 1.5rem 3rem; }
 }
+.article-body h3 { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--text-dark); margin: 1.8rem 0 0.6rem; }
+.article-body ol { margin: 0 0 1.5rem 1.4rem; color: var(--text-mid); }
+.article-body ol li { margin-bottom: 0.9rem; padding-left: 0.3rem; }
+.article-body strong { font-weight: 500; color: var(--text-dark); }
+.article-body ul { margin: 0 0 1.5rem 1.4rem; color: var(--text-mid); }
+.article-body ul li { margin-bottom: 0.9rem; padding-left: 0.3rem; }
+.article-hero-img img { height: 560px; object-fit: cover; object-position: 50% 60%; }
+@media (max-width: 768px) { .article-hero-img img { height: 420px; } }
 </style>
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Blog",
-  "name": "Danielle Leite — Counselling Blog",
-  "description": "Insights, reflections, and practical advice on expat life, mental health abroad, and navigating life far from home.",
-  "url": "https://danielleleite.com/blog/",
+  "@type": "BlogPosting",
+  "headline": "The Expat Christmas: When the Holidays Feel Far From Home",
+  "description": "Christmas abroad can magnify everything you miss. An expat counsellor on spending the holidays far from family, and gentle ways to cope when Christmas feels heavy.",
+  "url": "https://danielleleite.com/blog/the-expat-christmas/",
+  "datePublished": "2026-11-20",
+  "image": "https://danielleleite.com/blog/the-expat-christmas/expat-christmas-york.jpg",
   "author": {
     "@type": "Person",
+    "name": "Danielle Leite",
+    "url": "https://danielleleite.com"
+  },
+  "publisher": {
+    "@type": "Person",
     "name": "Danielle Leite"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://danielleleite.com/blog/the-expat-christmas/"
   }
 }
 </script>
-</head>
 <body>
 
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">
-    <img src="/nav-bar-logo.png" alt="Danielle Leite — Counselling & Support">
+    <img src="/nav-bar-logo.png" alt="Danielle Leite — Counselling &amp; Support">
   </a>
   <button class="hamburger" aria-label="Menu" onclick="document.querySelector('.nav-links').classList.toggle('open')">
     <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
@@ -261,94 +197,62 @@ footer {
   </ul>
 </nav>
 
-<!-- BLOG HEADER -->
-<section class="blog-header">
-  <h1>Blog</h1>
-  <p>Reflections on expat life, mental health abroad, and finding your way far from home.</p>
+<!-- ARTICLE HEADER -->
+<header class="article-header">
+  <span class="post-tag">Expat Life</span>
+  <h1>The Expat Christmas: When the Holidays Feel Far From Home</h1>
+  <p class="post-meta">By Danielle Leite &middot; 20 November 2026 &middot; 5 min read</p>
+</header>
+
+<!-- HERO IMAGE -->
+<div class="article-hero-img">
+  <img src="expat-christmas-york.jpg" alt="A woman in a winter coat walking her dog down a quiet street towards York Minster on a misty morning">
+</div>
+
+<!-- ARTICLE BODY -->
+<article class="article-body">
+  <p>I can't count how many Christmases I've spent away from loved ones. It's been too many. Being away from family <a href="/blog/it-can-hurt-to-be-an-expat/">can really hurt</a> from time to time, and the holidays are when it hurts the most.</p>
+
+  <p>Before <a href="/blog/adapting-to-a-new-country/">I moved abroad</a>, Christmas was predictable, in the best possible way. Every year we went to my grandparents', first one set and then the other, crossing Rio in the small hours. Christmas in my family was a huge party. My uncles would barbecue all night and Brazilian music played and played. It was the most fun I could imagine: Christmas, samba and the heat of high summer.</p>
+
+  <p>Fast forward to 1991, and I spent my first Christmas in the Northern Hemisphere, in the cold of York, England. Life didn't get more depressing than that. I remember a visceral feeling that first Christmas. I felt betrayed. What was the point of being there, when real life was happening somewhere else?</p>
+
+  <p>In the years since, I've spent some Christmases back home, even with my grandparents, who are long gone now. But I never again felt the utter contentment I had as a child. I'm sure that has less to do with which hemisphere I'm in and more to do with <a href="/blog/the-invisible-partner/">becoming the one</a> who organises, buys the presents and cooks the big meal.</p>
+
+  <p>Over the decades, Christmas as an expat became something we celebrated in our own way. We created our own traditions and built <a href="/blog/friendships-matter/">our own families</a>. That first Christmas in England may have been depressing, but soon we had our own little community, and the years after were something close to a real party. We made friends then whom we still see today. We travelled, we discovered different traditions, and we learned to enjoy Christmas away from home.</p>
+
+  <p>Now that I'm divorced, there's an extra layer of complication. I treasure the time I get with my children, and it's either Christmas or New Year, depending on the year before. The one thing that is, and always will be, missing is the big family celebration. That isn't even a reality for the family back home anymore: their numbers are shrinking, and travelling is hard for the older ones. I've learned to spend Christmas with a small but close group of loved ones, without the summer heat. Maybe that's more about getting older than about being an expat.</p>
+
+  <p>Life happens. We age, and we lose people we love. The question is whether we do it in the next town from where we were born, or while getting to see and know the world. When I add up the adventures I've had, the things I've seen and the friends I've made, they compare very well with the life I'd have had if I'd stayed in Rio. There's no version of my life I'd swap for this one. Being an expat has given me so much more than it has taken. I wouldn't have it any other way, even if I'm not in the tropical heat this Christmas.</p>
+
+  <h2>When Christmas abroad feels heavy</h2>
+
+  <p>The holidays have a way of magnifying everything. Social media fills up with family tables and homecomings, and everyone seems to be exactly where they belong. If you're far from home, it's easy to feel that you're the only one finding it hard. You're not.</p>
+
+  <p>You can love the life you've built abroad and still grieve the Christmases you've lost. Both are true at the same time, and neither cancels the other out. Missing home doesn't mean you made the wrong choice. It means something mattered to you.</p>
+
+  <p>For many expats, Christmas also brings up quieter losses: family members who are no longer there, a relationship that has ended, children who spend alternate years with the other parent, or the slow realisation that "home" has changed while you were away. It's no wonder so many people feel <a href="/blog/the-unspoken-loss-of-self/">a little lost in December</a>.</p>
+
+  <p>A few things can help:</p>
+
+  <ul>
+    <li><strong>Let it be different.</strong> Trying to recreate the Christmas of your childhood often makes the gap feel bigger. New traditions, however small, can become your own.</li>
+    <li><strong>Choose your people.</strong> A small table of friends who know you can be as nourishing as a big family gathering.</li>
+    <li><strong>Be kind to yourself.</strong> Feeling low at Christmas isn't ingratitude. <a href="/blog/self-love-for-expats/">Treat yourself the way you would treat a friend</a> who was far from home.</li>
+    <li><strong>Reach out before you need to.</strong> Many expats find it <a href="/blog/why-expats-struggle-to-ask-for-help/">hard to ask for help</a>, especially when everyone else seems busy and happy.</li>
+  </ul>
+
+  <p>If the holidays are bringing up more than you expected, talking to someone who understands life abroad can make a real difference. I offer online counselling for expats in English, Portuguese, French and Italian, and you can read about <a href="/blog/what-online-counselling-is-like/">what a session is actually like</a>. If you'd like to talk, <a href="/#contact">get in touch</a> for a free 15 minute call.</p>
+</article>
+
+<!-- CTA -->
+<section class="article-cta">
+  <p>If something here resonated, I'd love to hear from you. The first 15 minute consultation is free, with no obligation.</p>
+  <a href="/#contact" class="btn">Book a Free Consultation</a>
 </section>
 
-<!-- BLOG POSTS -->
-<div class="blog-container">
-
-  <article class="blog-post-card">
-    <span class="post-tag">Expat Mental Health</span>
-    <h2><a href="/blog/self-love-for-expats/">Self Love When You Live Abroad</a></h2>
-    <p class="post-excerpt">Moving abroad can leave you feeling unmoored, and harder on yourself than you ever were at home. Here's what self love really means as an expat, why it can feel out of reach after a move, and four gentle ways to practise it.</p>
-    <a href="/blog/self-love-for-expats/" class="read-more">Read more</a>
-  </article>
-
-  <article class="blog-post-card">
-    <span class="post-tag">Expat Mental Health</span>
-    <h2><a href="/blog/what-online-counselling-is-like/">What Online Counselling Is Actually Like</a></h2>
-    <p class="post-excerpt">Thinking about counselling but not sure what to expect? From the free first call to what a session actually feels like, here's an honest look at online counselling with me, and why it often works especially well for expats.</p>
-    <a href="/blog/what-online-counselling-is-like/" class="read-more">Read more</a>
-  </article>
-
-  <article class="blog-post-card">
-    <span class="post-tag">Expat Life</span>
-    <h2><a href="/blog/friendships-matter/">Friendships Matter — Especially When You Live Abroad</a></h2>
-    <p class="post-excerpt">When you move abroad, you don't just lose your address — you lose your entire social world. Building new friendships as an expat isn't optional. It's one of the most important things you can do for your mental health, and your sense of belonging.</p>
-    <a href="/blog/friendships-matter/" class="read-more">Read more</a>
-  </article>
-
-  <!-- PINNED -->
-  <article class="blog-post-card">
-    <span class="featured-tag">Featured</span><span class="post-tag">Expat Relationships</span>
-    <h2><a href="/blog/the-invisible-partner/">The Invisible Partner</a></h2>
-    <p class="post-excerpt">The expat partner who gives up their career, their identity, their support network — and is told how lucky they are. I've been on both sides, and the side that I take my strength and inspiration from isn't the one I'm on now.</p>
-    <a href="/blog/the-invisible-partner/" class="read-more">Read more</a>
-  </article>
-
-  <article class="blog-post-card">
-    <span class="featured-tag">Featured</span><span class="post-tag">Expat Identity</span>
-    <h2><a href="/blog/the-unspoken-loss-of-self/">The Unspoken Loss of Self</a></h2>
-    <p class="post-excerpt">When you move abroad, you don't just change your address — you experience a profound loss of the person you used to be. Your voice, your routines, your sense of competence — all of it unravels. And nobody talks about it.</p>
-    <a href="/blog/the-unspoken-loss-of-self/" class="read-more">Read more</a>
-  </article>
-
-  <!-- RECENT -->
-  <article class="blog-post-card">
-    <span class="post-tag">Identity & Belonging</span>
-    <h2><a href="/blog/being-the-minority/">Being the Minority</a></h2>
-    <p class="post-excerpt">It's not easy being "other" — the one whose accent gives them away, whose presence is noticed before it's understood. Being an outsider is one of the quietest struggles of expat life. Here's what it's really taught me, and how I've learned to carry it.</p>
-    <a href="/blog/being-the-minority/" class="read-more">Read more</a>
-  </article>
-
-  <article class="blog-post-card">
-    <span class="post-tag">Expat Life</span>
-    <h2><a href="/blog/adapting-to-a-new-country/">Adapting to a New Country</a></h2>
-    <p class="post-excerpt">At 15, I moved from Rio de Janeiro to York, England, and the culture shock was seismic. Years later, the same person moved to Paris and fell in love with it immediately. What makes adapting to a new country easy sometimes, and devastating others? It comes down to something more emotional than practical.</p>
-    <a href="/blog/adapting-to-a-new-country/" class="read-more">Read more</a>
-  </article>
-
-  <article class="blog-post-card">
-    <span class="post-tag">Expat Life</span>
-    <h2><a href="/blog/reverse-culture-shock/">Reverse Culture Shock</a></h2>
-    <p class="post-excerpt">You've settled into life abroad — and then you go home. Suddenly your own country feels foreign. The disorientation of reverse culture shock is one of the most underacknowledged parts of the expat journey, and one of the most revealing.</p>
-    <a href="/blog/reverse-culture-shock/" class="read-more">Read more</a>
-  </article>
-
-  <article class="blog-post-card">
-    <span class="post-tag">Expat Life</span>
-    <h2><a href="/blog/it-can-hurt-to-be-an-expat/">It Can Hurt to Be an Expat</a></h2>
-    <p class="post-excerpt">The funerals you miss, the weddings you can't attend, the goodbyes you never get to say. Sometimes this lifestyle takes its toll — it weighs heavily and feels selfish. But the size of your grief is the biggest measure of love.</p>
-    <a href="/blog/it-can-hurt-to-be-an-expat/" class="read-more">Read more</a>
-  </article>
-
-  <article class="blog-post-card">
-    <span class="post-tag">Expat Family</span>
-    <h2><a href="/blog/the-expat-son-of-the-expat-daughter/">The Expat Son of the Expat Daughter</a></h2>
-    <p class="post-excerpt">I never imagined being on this side of the expat life — the mum whose child lives away — because I was always that child. I never considered how it felt on the other side. I knew I missed home, but I didn't know home missed me.</p>
-    <a href="/blog/the-expat-son-of-the-expat-daughter/" class="read-more">Read more</a>
-  </article>
-
-  <article class="blog-post-card">
-    <span class="post-tag">Expat Life</span>
-    <h2><a href="/blog/why-expats-struggle-to-ask-for-help/">Why Expats Struggle to Ask for Help</a></h2>
-    <p class="post-excerpt">You moved abroad for adventure, opportunity, or love. So why does it feel so hard to admit you're struggling? For many expats, asking for help feels like admitting defeat. But the truth is, the very qualities that got you abroad — independence, resilience, adaptability — can also make it harder to recognise when you need support.</p>
-    <a href="/blog/why-expats-struggle-to-ask-for-help/" class="read-more">Read more</a>
-  </article>
-
+<div class="back-to-blog">
+  <a href="/blog/">Back to all posts</a>
 </div>
 
 <!-- FOOTER -->
